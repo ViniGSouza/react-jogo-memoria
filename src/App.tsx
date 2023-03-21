@@ -15,6 +15,7 @@ export const App = () => {
   const [moveCount, setMoveCount] = useState<number>(0);
   const [shownCount, setShownCount] = useState<number>(0);
   const [gridItems, setGridItems] = useState<GridItemType[]>([]);
+  const [finished, setFinished] = useState<boolean>(false);
 
   useEffect(() => {
     resetAndCreateGrid()
@@ -62,6 +63,7 @@ export const App = () => {
   useEffect(() => {
     if(moveCount > 0 && gridItems.every(item => item.permanentShown === true)) {
       setPlaying(false);
+      setFinished(true);
     }
   }, [moveCount, gridItems]);
 
@@ -95,6 +97,7 @@ export const App = () => {
     setGridItems(tmpGrid);
 
     // Passo 3 - Começar o jogo.
+    setFinished(false);
     setPlaying(true);
   }
 
@@ -112,6 +115,7 @@ export const App = () => {
   }
 
   return (
+    <>
     <C.Container>
       <C.Info>
         <C.LogoLink href="#">
@@ -137,6 +141,10 @@ export const App = () => {
         </C.Grid>
       </C.GridArea>
     </C.Container>
+    <C.Finished>
+      {finished && 'Parabéns, você conseguiu!'}
+    </C.Finished>
+    </>
   )
 }
 

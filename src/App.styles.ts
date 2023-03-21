@@ -56,3 +56,11 @@ export const Grid = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 `;
+
+export const Finished = styled.p`
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.5rem;
+  color: #101c40;
+  text-align: center;
+  padding: 0 .5rem;
+`
