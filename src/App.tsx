@@ -61,8 +61,8 @@ export const App = () => {
 
   useEffect(() => {
     if(moveCount > 0 && gridItems.every(item => item.permanentShown === true)) {
-      setPlaying(false);
       alert('Você conseguiu achar todos os pares, parabéns!')
+      setPlaying(false);
     }
   }, [moveCount, gridItems]);
 
