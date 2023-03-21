@@ -62,9 +62,6 @@ export const App = () => {
   useEffect(() => {
     if(moveCount > 0 && gridItems.every(item => item.permanentShown === true)) {
       setPlaying(false);
-      setTimeout(() => {
-        alert('Parabéns, você conseguiu! :)')
-      }, 500)
     }
   }, [moveCount, gridItems]);
 
